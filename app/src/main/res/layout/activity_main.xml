@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F9FBF4"
+    android:paddingTop="24dp"
+    tools:context=".MainActivity">
+
+    <!-- Profile Picture -->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/profilepic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Greeting Text -->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="14dp"
+        android:fontFamily="@font/rubik_medium"
+        android:text="Good evening, Ivy"
+        android:textColor="#444444"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <!-- Horizontal RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewDays"
+        android:layout_width="match_parent"
+        android:layout_height="86dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="24dp"
+        android:padding="4dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:listitem="@layout/item_days" />
+
+    <!-- Search Bar -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/searchBar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/edit_text_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerViewDays">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="16dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_search"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+
+            android:id="@+id/searchEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12sp"
+            android:layout_marginEnd="12sp"
+            android:autofillHints=""
+            android:background="@color/white"
+            android:fontFamily="@font/rubik_medium"
+            android:hint="Search"
+            android:inputType="text"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Today's Tasks Label -->
+    <TextView
+        android:id="@+id/todaysTasksLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="14dp"
+        android:fontFamily="@font/rubik_semibold"
+        android:text="Today’s tasks"
+        android:textColor="#444444"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchBar" />
+
+    <!-- Vertical RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/todaysTasksRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:translationZ="22dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/todaysTasksLabel"
+        tools:listitem="@layout/item_task" />
+
+    <!-- Bottom Menu -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottom_menu"
+        android:layout_width="match_parent"
+        android:layout_height="115dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- Bottom Menu -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="96dp"
+            android:background="@drawable/bottom_bg"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <!-- Add Task Icon -->
+            <FrameLayout
+                android:id="@+id/addTaskContainer"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginBottom="-42dp"
+                android:background="@drawable/circular_background"
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:id="@+id/addTaskIcon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/baseline_add_24"
+                    app:tint="@color/white" />
+            </FrameLayout>
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="24dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/baseline_home_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="44dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/baseline_calendar_month_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView3"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="44dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/baseline_notifications_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/imageView5"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="24dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/baseline_window_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

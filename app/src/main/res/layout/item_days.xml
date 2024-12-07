@@ -1,0 +1,35 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="40dp"
+    android:layout_height="70dp"
+    android:layout_marginEnd="12dp"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <!-- Sana (faqat 3, 8 kabi) -->
+    <LinearLayout
+        android:id="@+id/dayLayout"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/graphite_background"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/dateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik_medium"
+            android:text="8"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <!-- Kunning qisqa nomi -->
+    <TextView
+        android:id="@+id/dayTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Sun"
+        android:textAlignment="center"
+        android:textSize="15sp" />
+</LinearLayout>

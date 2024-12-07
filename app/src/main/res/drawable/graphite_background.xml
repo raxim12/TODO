@@ -1,0 +1,9 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <solid android:color="#4D4117" /> <!-- Orqa fon rangi (tanlangan rang) -->
+    <size
+        android:width="55dp"
+        android:height="55dp" /> <!-- Dumaloq o'lchami -->
+    <elevation android:elevation="8dp" /> <!-- Bo'rtib chiqish uchun soyani qo'shish -->
+</shape>
+
